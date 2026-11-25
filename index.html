@@ -13,9 +13,16 @@
   <meta property="og:title" content="Amir Mostaghimi, Ph.D. — Computational Chemistry &amp; Molecular ML" />
   <meta property="og:description" content="Postdoctoral Researcher at the University of Calgary combining DFT, molecular graph neural networks, Bayesian optimization, and scientific software for electrocatalysis and materials discovery." />
   <meta property="og:url" content="https://amir-b-mostaghimi.github.io/" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://amir-b-mostaghimi.github.io/assets/hero-catalyst.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Amir Mostaghimi, Ph.D. — Computational Chemistry &amp; AI for Materials" />
   <meta name="twitter:description" content="Computational Chemistry, Molecular Machine Learning, 2e-ORR Electrocatalysis, and Scientific Software — University of Calgary." />
+
+  <!-- Editorial Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 
   <!-- Schema.org Person JSON-LD for Google Knowledge Graph & LLM Entity Disambiguation -->
   <script type="application/ld+json">
@@ -39,14 +46,8 @@
       "url": "https://www.ucalgary.ca/"
     },
     "alumniOf": [
-      {
-        "@type": "CollegeOrUniversity",
-        "name": "University of Calgary"
-      },
-      {
-        "@type": "CollegeOrUniversity",
-        "name": "Mohaghegh Ardabili University"
-      }
+      { "@type": "CollegeOrUniversity", "name": "University of Calgary" },
+      { "@type": "CollegeOrUniversity", "name": "Mohaghegh Ardabili University" }
     ],
     "address": {
       "@type": "PostalAddress",
@@ -80,452 +81,528 @@
     ]
   }
   </script>
-
-  <style>
-    :root {
-      --bg: #0b1120;
-      --surface: #111827;
-      --surface-alt: #162033;
-      --border: #1f2d47;
-      --text: #e5edf8;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.12);
-      --gold: #fbbf24;
-      --max-w: 920px;
-    }
-
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f8fafc;
-        --surface: #ffffff;
-        --surface-alt: #f1f5f9;
-        --border: #e2e8f0;
-        --text: #0f172a;
-        --muted: #475569;
-        --accent: #0284c7;
-        --accent-soft: rgba(2, 132, 199, 0.09);
-        --gold: #b45309;
-      }
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .container {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 22px;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: color-mix(in srgb, var(--bg) 88%, transparent);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 14px 0;
-      flex-wrap: wrap;
-    }
-    .brand-name {
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--text);
-      letter-spacing: -0.01em;
-    }
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      font-size: 0.92rem;
-      flex-wrap: wrap;
-    }
-    .nav-links a { color: var(--muted); font-weight: 500; }
-    .nav-links a:hover { color: var(--accent); text-decoration: none; }
-
-    header.hero {
-      padding: 54px 0 36px;
-      border-bottom: 1px solid var(--border);
-    }
-    .eyebrow {
-      display: inline-block;
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: var(--accent-soft);
-      padding: 4px 10px;
-      border-radius: 999px;
-      margin-bottom: 14px;
-    }
-    h1 {
-      margin: 0 0 8px;
-      font-size: clamp(2rem, 4vw, 2.75rem);
-      line-height: 1.15;
-      letter-spacing: -0.025em;
-    }
-    .subtitle {
-      font-size: 1.12rem;
-      color: var(--muted);
-      margin: 0 0 8px;
-      font-weight: 500;
-    }
-    .aliases {
-      font-size: 0.88rem;
-      color: var(--muted);
-      margin: 0 0 20px;
-    }
-    .bio {
-      font-size: 1.02rem;
-      max-width: 78ch;
-      margin: 0 0 24px;
-    }
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .btn-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 14px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--text);
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: border-color 0.15s ease, transform 0.15s ease;
-    }
-    .btn-pill:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      text-decoration: none;
-      transform: translateY(-1px);
-    }
-    .btn-pill.primary {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #0b1120;
-      font-weight: 600;
-    }
-    .btn-pill.primary:hover { color: #0b1120; opacity: 0.92; }
-
-    section {
-      padding: 36px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    h2 {
-      margin: 0 0 18px;
-      font-size: 1.38rem;
-      letter-spacing: -0.015em;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-    }
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 18px 20px;
-    }
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 1.05rem;
-    }
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 12px;
-    }
-    .tag {
-      font-size: 0.76rem;
-      padding: 2px 8px;
-      border-radius: 6px;
-      background: var(--surface-alt);
-      border: 1px solid var(--border);
-      color: var(--muted);
-    }
-
-    .news-list, .award-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 12px;
-    }
-    .news-list li, .award-list li {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 12px 16px;
-      font-size: 0.95rem;
-    }
-    .date-badge {
-      display: inline-block;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--accent);
-      background: var(--accent-soft);
-      padding: 2px 8px;
-      border-radius: 6px;
-      margin-right: 8px;
-    }
-    .pick-badge {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--gold);
-      border: 1px solid var(--gold);
-      padding: 1px 7px;
-      border-radius: 999px;
-      margin-left: 6px;
-      vertical-align: middle;
-    }
-
-    .pub-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 12px;
-    }
-    .pub-item {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 14px 18px;
-    }
-    .pub-title {
-      font-weight: 600;
-      font-size: 0.97rem;
-      margin-bottom: 4px;
-    }
-    .pub-meta {
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
-
-    footer {
-      padding: 28px 0 44px;
-      font-size: 0.88rem;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-  </style>
 </head>
 <body>
-  <nav>
+  <nav class="site-nav">
     <div class="container nav-inner">
-      <a class="brand-name" href="#top">Amir Mostaghimi, Ph.D.</a>
+      <a class="nav-brand" href="#top">Amir Mostaghimi, Ph.D.</a>
       <div class="nav-links">
-        <a href="#news">News</a>
         <a href="#research">Research</a>
+        <a href="#interactive-lab">Interactive Lab</a>
         <a href="#software">Software</a>
         <a href="#publications">Publications</a>
-        <a href="#recognition">Recognition</a>
+        <a href="#cv">CV &amp; Recognition</a>
       </div>
     </div>
   </nav>
 
   <main id="top" class="container">
+    <!-- HERO -->
     <header class="hero">
-      <span class="eyebrow">Postdoctoral Researcher · University of Calgary</span>
-      <h1>Amir Mostaghimi, Ph.D.</h1>
-      <p class="subtitle">Computational Chemistry · Molecular Machine Learning · AI for Materials Discovery</p>
-      <p class="aliases">Published academically as <strong>A. H. Bagherzadeh Mostaghimi</strong> (Amir Hassan Bagherzadeh Mostaghimi) · Calgary, Alberta, Canada</p>
-      <p class="bio">
-        I am a Postdoctoral Researcher in the Department of Chemistry at the University of Calgary, where I earned my Ph.D. in Computational Chemistry (2024) studying two-electron oxygen reduction (2e-ORR) electrocatalysts for direct H<sub>2</sub>O<sub>2</sub> electrosynthesis. My work bridges physics-based simulation (DFT, transition-state/CI-NEB pathways, and molecular dynamics) with data-driven chemistry—including molecular graph neural networks (GCN/AttentiveFP), Bayesian optimization, reinforcement-learning experimental design, and interactive cheminformatics software.
-      </p>
-      <div class="pill-row">
-        <a class="btn-pill primary" href="https://scholar.google.com/citations?user=tVTXaxEAAAAJ" target="_blank" rel="noopener">Google Scholar (1,300+ citations)</a>
-        <a class="btn-pill" href="https://orcid.org/0000-0002-8084-9498" target="_blank" rel="noopener">ORCID: 0000-0002-8084-9498</a>
-        <a class="btn-pill" href="https://www.linkedin.com/in/amir-mostaghimi/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn-pill" href="https://github.com/amir-b-mostaghimi" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn-pill" href="https://www.researchgate.net/profile/Amir-Mostaghimi" target="_blank" rel="noopener">ResearchGate</a>
-        <a class="btn-pill" href="https://medium.com/@amir.b.mostaghimi" target="_blank" rel="noopener">Medium</a>
-        <a class="btn-pill" href="mailto:amir.b.mostaghimi@gmail.com">Email</a>
+      <div class="hero-grid">
+        <div>
+          <p class="kicker">University of Calgary · Department of Chemistry</p>
+          <h1>Amir Mostaghimi, Ph.D.</h1>
+          <p class="hero-role">Postdoctoral Researcher in Computational Chemistry &amp; AI for Materials Discovery</p>
+          <p class="hero-aliases">Published academically as <strong>A. H. Bagherzadeh Mostaghimi</strong> · Calgary, AB, Canada</p>
+          <p class="hero-lead">
+            I combine atomistic electronic-structure simulation (DFT, transition-state/CI-NEB pathways, and molecular dynamics) with modern machine learning—graph neural networks, Bayesian optimization, and reinforcement-learning experimental design—to accelerate catalyst discovery, supramolecular chemistry, and reproducible scientific software.
+          </p>
+
+          <div class="metrics-strip">
+            <div>
+              <div class="metric-val">1,320+</div>
+              <div class="metric-label">Scholarly Citations</div>
+            </div>
+            <div>
+              <div class="metric-val">11</div>
+              <div class="metric-label">Peer-Reviewed Papers</div>
+            </div>
+            <div>
+              <div class="metric-val">50+</div>
+              <div class="metric-label">Researchers Trained</div>
+            </div>
+          </div>
+
+          <div class="link-bar">
+            <a class="btn-primary" href="https://scholar.google.com/citations?user=tVTXaxEAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+            <a class="link-subtle" href="https://orcid.org/0000-0002-8084-9498" target="_blank" rel="noopener">ORCID</a>
+            <a class="link-subtle" href="https://www.linkedin.com/in/amir-mostaghimi/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="link-subtle" href="https://github.com/amir-b-mostaghimi" target="_blank" rel="noopener">GitHub</a>
+            <a class="link-subtle" href="https://www.researchgate.net/profile/Amir-Mostaghimi" target="_blank" rel="noopener">ResearchGate</a>
+            <a class="link-subtle" href="https://medium.com/@amir.b.mostaghimi" target="_blank" rel="noopener">Medium</a>
+            <a class="link-subtle" href="https://www.wikidata.org/wiki/Q142293467" target="_blank" rel="noopener">Wikidata</a>
+            <a class="link-subtle" href="mailto:amir.b.mostaghimi@gmail.com">Email</a>
+          </div>
+        </div>
+
+        <figure class="figure-plate">
+          <img src="assets/hero-catalyst.jpg" alt="Editorial scientific illustration of an Au@Pd nanowire lattice with adsorbed *OOH intermediate for 2e-ORR hydrogen peroxide electrosynthesis" />
+          <figcaption>
+            <strong>Fig. 1 — Atomic-Scale Electrocatalysis.</strong> Conceptual plate illustrating orbital-modulated Au@Pd surfaces stabilizing the *OOH intermediate toward selective 2e<sup>&minus;</sup>-ORR H<sub>2</sub>O<sub>2</sub> synthesis (<em>J. Am. Chem. Soc.</em> 2024; <em>Nat. Commun.</em> 2020).
+          </figcaption>
+        </figure>
       </div>
     </header>
 
-    <section id="news">
-      <h2>Recent News</h2>
-      <ul class="news-list">
-        <li>
-          <span class="date-badge">2026</span>
-          Our co-authored host–guest machine learning paper in <em>Chemical Science</em> (<a href="https://doi.org/10.1039/D6SC00479B" target="_blank" rel="noopener">DOI: 10.1039/D6SC00479B</a>) was selected as a <strong>ChemSci Pick of the Week</strong> by the Royal Society of Chemistry.
-        </li>
-        <li>
-          <span class="date-badge">2026</span>
-          Released <a href="https://github.com/amir-b-mostaghimi/Lit_Synth" target="_blank" rel="noopener">Lit_Synth</a>, an open-source Python CLI for multi-database scientific literature synthesis across OpenAlex, Europe PMC, Crossref, arXiv, PubMed, and Semantic Scholar.
-        </li>
-        <li>
-          <span class="date-badge">2024</span>
-          Joined the University of Calgary Department of Chemistry as a Postdoctoral Researcher (August 2024) after completing my Ph.D. in Computational Chemistry; co-authored our <em>JACS</em> study on Au@Pd nanowire electrocatalysts for H<sub>2</sub>O<sub>2</sub> synthesis.
-        </li>
-      </ul>
+    <!-- 01 / RESEARCH -->
+    <section id="research" class="section">
+      <div class="section-header">
+        <div>
+          <span class="section-num">01 / Research Program</span>
+          <h2>Bridging Quantum Mechanics &amp; Data-Driven Chemistry</h2>
+          <p class="section-sub">My doctoral and postdoctoral portfolio spans first-principles electrocatalyst design, small-sample supramolecular machine learning, and closed-loop experimental optimization.</p>
+        </div>
+      </div>
+
+      <div class="research-grid">
+        <article class="story-card">
+          <img src="assets/calixarene-gnn.jpg" alt="Editorial scientific illustration of a supramolecular calixarene host-guest cavity overlaid with a molecular graph neural network" />
+          <div class="story-body">
+            <span class="story-meta">Chemical Science 2026 · ChemSci Pick of the Week</span>
+            <h3>Supramolecular Host–Guest Machine Learning</h3>
+            <p>
+              Built and benchmarked small-sample molecular ML pipelines across 39 calixarene hosts and 8 histone peptide targets—comparing ECFP6 fingerprints (RF/SVM), aligned 3-D CNN/ResNets, and graph neural networks (GCN, AttentiveFP) under strict repeated-holdout and leave-one-out validation, alongside conditional diffusion prototypes for molecular connectivity generation.
+            </p>
+            <div class="tag-list">
+              <span class="tag">PyTorch</span>
+              <span class="tag">GCN / AttentiveFP</span>
+              <span class="tag">RDKit</span>
+              <span class="tag">3-D ResNet</span>
+              <span class="tag">Diffusion</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="story-card">
+          <img src="assets/bayesian-landscape.jpg" alt="Editorial scientific illustration of Bayesian optimization sampling on a smooth potential energy landscape" />
+          <div class="story-body">
+            <span class="story-meta">Experimental Design &amp; High-Throughput Discovery</span>
+            <h3>Bayesian Optimization, Learned Optimizers &amp; Catalyst Screening</h3>
+            <p>
+              Developed GPU-accelerated PyTorch/CUDA benchmarking software (<code>B2OPT</code>, <code>JVHLab-RxnOpt</code>) comparing learned optimizers, PFN/in-context surrogates, Bayesian optimization, and RL experimental design across 100 synthetic reaction landscapes (+13.1% mean best-observed gain over three rounds), complementing high-throughput VASP/CHE DFT screening of 24+ single-atom and alloy catalysts.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Bayesian Optimization</span>
+              <span class="tag">RL Design</span>
+              <span class="tag">VASP / DFT</span>
+              <span class="tag">CI-NEB</span>
+              <span class="tag">HPC / Slurm</span>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section id="research">
-      <h2>Research Pillars</h2>
-      <div class="grid-2">
-        <div class="card">
-          <h3>Molecular ML &amp; Cheminformatics</h3>
-          <p>Small-sample supramolecular host–guest binding prediction (calixarene–histone systems) using ECFP6 baselines, 3-D CNN/ResNets, and graph neural networks (GCN/AttentiveFP) with rigorous holdout validation and conditional diffusion prototypes.</p>
-          <div class="tag-row">
-            <span class="tag">PyTorch</span><span class="tag">RDKit</span><span class="tag">GCN / AttentiveFP</span><span class="tag">Diffusion Models</span>
+    <!-- 02 / INTERACTIVE LAB -->
+    <section id="interactive-lab" class="section">
+      <div class="section-header">
+        <div>
+          <span class="section-num">02 / Interactive Lab</span>
+          <h2>Live Physics &amp; Machine-Learning Sandboxes</h2>
+          <p class="section-sub">Two browser-native simulations drawn directly from my published electrocatalysis and reaction-optimization workflows—adjust parameters or click to explore.</p>
+        </div>
+      </div>
+
+      <!-- SIMULATOR 1: 2e-ORR Volcano & CHE -->
+      <div class="lab-panel">
+        <div class="lab-top">
+          <div>
+            <h3>Interactive 2e<sup>&minus;</sup>-ORR (H<sub>2</sub>O<sub>2</sub>) Sabatier Volcano &amp; CHE Diagram</h3>
+            <p>Explore how the *OOH binding free energy (&Delta;G<sub>*OOH</sub>) and applied electrode potential (U vs. RHE) govern limiting potential, overpotential, and the potential-determining step for direct hydrogen peroxide electrosynthesis.</p>
+          </div>
+          <span class="lab-ref">JACS 2024 · ACS Catal. 2020</span>
+        </div>
+
+        <div id="volcano-presets" class="preset-row" aria-label="Catalyst presets"></div>
+
+        <div class="controls-grid">
+          <div class="control-item">
+            <label for="slider-ooh">
+              <span>*OOH Binding Free Energy (&Delta;G<sub>*OOH</sub>)</span>
+              <span id="val-ooh" class="mono">4.29 eV</span>
+            </label>
+            <input id="slider-ooh" type="range" min="3.50" max="4.90" step="0.01" value="4.29" />
+          </div>
+          <div class="control-item">
+            <label for="slider-u">
+              <span>Applied Potential (U vs. RHE)</span>
+              <span id="val-u" class="mono">0.55 V</span>
+            </label>
+            <input id="slider-u" type="range" min="0.00" max="0.85" step="0.01" value="0.55" />
           </div>
         </div>
-        <div class="card">
-          <h3>High-Throughput Catalyst Screening</h3>
-          <p>Atomic-scale DFT screening (VASP, Gaussian), computational hydrogen electrode (CHE) free-energy landscapes, surface Pourbaix diagrams, and climbing-image NEB pathways for 2e-ORR H<sub>2</sub>O<sub>2</sub> electrosynthesis and single-atom catalysts.</p>
-          <div class="tag-row">
-            <span class="tag">VASP</span><span class="tag">Gaussian</span><span class="tag">2e-ORR</span><span class="tag">CI-NEB</span><span class="tag">HPC / Slurm</span>
+
+        <div class="canvas-pair">
+          <div class="canvas-wrap">
+            <canvas id="canvas-volcano"></canvas>
+            <div class="canvas-caption">Fig. 2a — Theoretical 2e⁻-ORR Volcano Plot (Peak at ΔG*OOH = 4.22 eV)</div>
+          </div>
+          <div class="canvas-wrap">
+            <canvas id="canvas-che"></canvas>
+            <div class="canvas-caption">Fig. 2b — Computational Hydrogen Electrode (CHE) Free-Energy Steps</div>
           </div>
         </div>
-        <div class="card">
-          <h3>Bayesian &amp; RL Experimental Design</h3>
-          <p>Benchmarking learned optimizers, PFN/in-context surrogates, Bayesian optimization, and reinforcement-learning experimental design for multi-objective reaction optimization and candidate prioritization.</p>
-          <div class="tag-row">
-            <span class="tag">Bayesian Optimization</span><span class="tag">RL</span><span class="tag">CUDA / AMP</span><span class="tag">Benchmarking</span>
+
+        <div class="readout-bar">
+          <div class="readout-box">
+            <div class="readout-label">Limiting Potential (U<sub>L</sub>)</div>
+            <div id="out-ul" class="readout-val">0.63 V</div>
+          </div>
+          <div class="readout-box">
+            <div class="readout-label">Theoretical Overpotential (&eta;)</div>
+            <div id="out-eta" class="readout-val copper">0.07 V</div>
+          </div>
+          <div class="readout-box">
+            <div class="readout-label">Potential-Determining Step</div>
+            <div id="out-pds" class="readout-val">O₂ → *OOH</div>
+          </div>
+          <div class="readout-box">
+            <div class="readout-label">Catalytic Regime</div>
+            <div id="out-regime" class="readout-val sage">Weak Binding (Selective)</div>
           </div>
         </div>
-        <div class="card">
-          <h3>Scientific Software &amp; Data Dashboards</h3>
-          <p>End-to-end research software, xTB/AIMNet2 molecular-fragmentation workflows, hydrometallurgical REE data analytics (4,454-record lanthanide separation dashboard), and stakeholder analytics dashboards for ACWA.</p>
-          <div class="tag-row">
-            <span class="tag">Streamlit</span><span class="tag">xTB / AIMNet2</span><span class="tag">ASE</span><span class="tag">Plotly</span>
+      </div>
+
+      <!-- SIMULATOR 2: Bayesian Optimization -->
+      <div class="lab-panel">
+        <div class="lab-top">
+          <div>
+            <h3>Interactive Bayesian Optimization for Reaction Discovery</h3>
+            <p>Step through a real Gaussian Process surrogate (RBF kernel) with Upper Confidence Bound (UCB) or Expected Improvement (EI) acquisition on a synthetic reaction-yield surface. Click <em>+1 Experiment</em>, run 8 automated rounds, or click anywhere on the plot to test manually.</p>
+          </div>
+          <span class="lab-ref">JVHLab-RxnOpt · B2OPT</span>
+        </div>
+
+        <div class="preset-row">
+          <button id="bo-step" type="button" class="chip-btn copper">+1 BO Experiment</button>
+          <button id="bo-auto" type="button" class="chip-btn active">Auto-Run 8 Rounds</button>
+          <button id="bo-acq" type="button" class="chip-btn">Acquisition: UCB</button>
+          <button id="bo-reset" type="button" class="chip-btn">New Landscape</button>
+        </div>
+
+        <div class="controls-grid">
+          <div class="control-item">
+            <label for="slider-kappa">
+              <span>UCB Exploration Weight (&kappa;)</span>
+              <span id="val-kappa" class="mono">2.0</span>
+            </label>
+            <input id="slider-kappa" type="range" min="0.2" max="4.0" step="0.1" value="2.0" />
+          </div>
+        </div>
+
+        <div class="canvas-wrap wide">
+          <canvas id="canvas-bo"></canvas>
+          <div class="canvas-caption">Fig. 3 — Solid blue: GP mean μ(x) · Shaded blue: ±2σ uncertainty · Dashed gray: hidden yield · Copper band: acquisition α(x)</div>
+        </div>
+
+        <div class="readout-bar" style="margin-top: 14px;">
+          <div class="readout-box">
+            <div class="readout-label">Experiments Run</div>
+            <div id="out-bo-round" class="readout-val">2 exp.</div>
+          </div>
+          <div class="readout-box">
+            <div class="readout-label">Best Yield (Bayesian Opt.)</div>
+            <div id="out-bo-best" class="readout-val sage">—</div>
+          </div>
+          <div class="readout-box">
+            <div class="readout-label">Random Search Baseline</div>
+            <div id="out-bo-rand" class="readout-val">—</div>
+          </div>
+          <div class="readout-box">
+            <div class="readout-label">True Landscape Optimum</div>
+            <div id="out-bo-opt" class="readout-val copper">—</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="software">
-      <h2>Open-Source Software</h2>
-      <div class="grid-2">
-        <div class="card">
-          <h3><a href="https://github.com/amir-b-mostaghimi/Lit_Synth" target="_blank" rel="noopener">Lit_Synth</a></h3>
-          <p>Python CLI querying OpenAlex, Europe PMC, Crossref, arXiv, PubMed, and Semantic Scholar with DOI/title deduplication, relevance/citation ranking, citation-graph expansion, and retraction checks.</p>
+    <!-- 03 / SOFTWARE & DATA PRODUCTS -->
+    <section id="software" class="section">
+      <div class="section-header">
+        <div>
+          <span class="section-num">03 / Software &amp; Data Products</span>
+          <h2>Open-Source Tools &amp; Analytical Systems</h2>
+          <p class="section-sub">Reproducible Python packages, cheminformatics dashboards, and multi-database literature workflows built for research teams and stakeholders.</p>
         </div>
-        <div class="card">
-          <h3><a href="https://github.com/amir-b-mostaghimi/Dashboard" target="_blank" rel="noopener">Lanthanide Separation Dashboard</a></h3>
-          <p>Interactive Streamlit/RDKit/py3Dmol dashboard centralizing 4,454 condition–pair observations across 91 lanthanide pairs and 58 structures for rare-earth-element separation analysis.</p>
+      </div>
+
+      <div class="software-grid">
+        <div class="soft-card">
+          <div class="soft-head">
+            <h3><a href="https://github.com/amir-b-mostaghimi/Lit_Synth" target="_blank" rel="noopener">Lit_Synth</a></h3>
+            <span class="soft-type">Open Source · Python CLI</span>
+          </div>
+          <p>Automated scientific literature synthesis querying OpenAlex, Europe PMC, Crossref, arXiv, PubMed, and Semantic Scholar with DOI/title deduplication, citation-graph expansion, retraction screening, and Markdown/CSV reporting.</p>
+          <div class="tag-list">
+            <span class="tag">Python</span><span class="tag">OpenAlex</span><span class="tag">Crossref</span><span class="tag">CITATION.cff</span>
+          </div>
         </div>
-        <div class="card">
-          <h3><a href="https://github.com/amir-b-mostaghimi/GFA" target="_blank" rel="noopener">Glass-Forming Affinity (GFA)</a></h3>
-          <p>Materials-informatics pipeline using the Materials Project API, pymatgen, matminer, and random-forest modeling for glass-forming affinity classification.</p>
+
+        <div class="soft-card">
+          <div class="soft-head">
+            <h3><a href="https://github.com/amir-b-mostaghimi/Dashboard" target="_blank" rel="noopener">Lanthanide Separation Dashboard</a></h3>
+            <span class="soft-type">Open Source · Cheminformatics</span>
+          </div>
+          <p>Interactive Streamlit, RDKit, and py3Dmol dashboard centralizing 4,454 experimental condition–pair observations across 91 lanthanide pairs and 58 molecular structures to support hydrometallurgical rare-earth-element (REE) research.</p>
+          <div class="tag-list">
+            <span class="tag">Streamlit</span><span class="tag">RDKit</span><span class="tag">py3Dmol</span><span class="tag">4,454 Records</span>
+          </div>
         </div>
-        <div class="card">
-          <h3><a href="https://github.com/amir-b-mostaghimi/Data_query_and_visualization_using_R" target="_blank" rel="noopener">Materials Project R Toolkit</a></h3>
-          <p>R workflow for querying, filtering, and visualizing materials property datasets directly from the Materials Project API.</p>
+
+        <div class="soft-card">
+          <div class="soft-head">
+            <h3>Calgary Wastewater Analytics Explorer</h3>
+            <span class="soft-type">Applied Analytics · ACWA</span>
+          </div>
+          <p>End-to-end four-view Streamlit/Plotly/pydeck analytics dashboard combining geospatial trends, interpretable regional classification, temporal validation audits, and anomaly detection—reused by ACWA for reporting, grant drafts, and stakeholder presentations.</p>
+          <div class="tag-list">
+            <span class="tag">Streamlit</span><span class="tag">Plotly / pydeck</span><span class="tag">scikit-learn</span><span class="tag">PubChem API</span>
+          </div>
+        </div>
+
+        <div class="soft-card">
+          <div class="soft-head">
+            <h3><a href="https://github.com/amir-b-mostaghimi/GFA" target="_blank" rel="noopener">GFA</a> &amp; <a href="https://github.com/amir-b-mostaghimi/Data_query_and_visualization_using_R" target="_blank" rel="noopener">Materials Project R Toolkit</a></h3>
+            <span class="soft-type">Open Source · Materials Informatics</span>
+          </div>
+          <p>Materials-informatics pipelines querying the Materials Project API via Python (<code>pymatgen</code>, <code>matminer</code>, 500-tree random forest for glass-forming affinity) and R for rapid property filtering and visualization.</p>
+          <div class="tag-list">
+            <span class="tag">pymatgen</span><span class="tag">matminer</span><span class="tag">R</span><span class="tag">Materials Project</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="publications">
-      <h2>Selected Peer-Reviewed Publications</h2>
+    <!-- 04 / PUBLICATIONS -->
+    <section id="publications" class="section">
+      <div class="section-header">
+        <div>
+          <span class="section-num">04 / Selected Publications</span>
+          <h2>Peer-Reviewed Journal Articles</h2>
+          <p class="section-sub">Filter by research theme. Full bibliometric record available on <a href="https://scholar.google.com/citations?user=tVTXaxEAAAAJ" target="_blank" rel="noopener">Google Scholar</a> and <a href="https://orcid.org/0000-0002-8084-9498" target="_blank" rel="noopener">ORCID</a>.</p>
+        </div>
+      </div>
+
+      <div class="pub-toolbar">
+        <div class="preset-row" style="margin: 0;">
+          <button type="button" class="chip-btn active" data-pub-filter="all">All (11)</button>
+          <button type="button" class="chip-btn" data-pub-filter="electrocatalysis">Electrocatalysis &amp; H₂O₂</button>
+          <button type="button" class="chip-btn" data-pub-filter="ml">Molecular ML</button>
+          <button type="button" class="chip-btn" data-pub-filter="review">Reviews</button>
+        </div>
+        <span id="pub-count" class="mono" style="font-size: 0.78rem; color: var(--ink-muted);">Showing 11 of 11 publications</span>
+      </div>
+
       <ol class="pub-list">
-        <li class="pub-item">
-          <div class="pub-title">
-            Synthesis and machine learning techniques to enable data-driven investigation of supramolecular host–guest interactions
-            <span class="pick-badge">ChemSci Pick of the Week</span>
+        <li class="pub-row" data-topic="ml">
+          <div class="pub-year">2026</div>
+          <div>
+            <div class="pub-title">Synthesis and machine learning techniques to enable data-driven investigation of supramolecular host–guest interactions</div>
+            <div class="pub-authors">A. Shaurya, <strong>A. H. Bagherzadeh Mostaghimi</strong>, D. R. Turnbull, F. Hof, et al.</div>
+            <div class="pub-venue">
+              <span><em>Chemical Science</em>, 17(26), 12884–12894</span>
+              <span class="badge-pick">ChemSci Pick of the Week</span>
+              <a class="mono" href="https://doi.org/10.1039/D6SC00479B" target="_blank" rel="noopener">10.1039/D6SC00479B</a>
+            </div>
           </div>
-          <div class="pub-meta">A. Shaurya, <strong>A. H. Bagherzadeh Mostaghimi</strong>, D. R. Turnbull, F. Hof, et al. · <em>Chemical Science</em>, 17(26), 12884–12894 (2026) · <a href="https://doi.org/10.1039/D6SC00479B" target="_blank" rel="noopener">DOI: 10.1039/D6SC00479B</a></div>
         </li>
-        <li class="pub-item">
-          <div class="pub-title">Pd 4d Orbital Overlapping Modulation on Au@Pd Nanowires for Efficient H<sub>2</sub>O<sub>2</sub> Production</div>
-          <div class="pub-meta">Z. Deng, <strong>A. H. B. Mostaghimi</strong> (equal contribution), M. Gong, N. Chen, S. Siahrostami, X. Wang · <em>Journal of the American Chemical Society</em>, 146(4), 2816–2823 (2024) · <a href="https://doi.org/10.1021/jacs.3c13259" target="_blank" rel="noopener">DOI: 10.1021/jacs.3c13259</a></div>
+
+        <li class="pub-row" data-topic="electrocatalysis">
+          <div class="pub-year">2024</div>
+          <div>
+            <div class="pub-title">Pd 4d Orbital Overlapping Modulation on Au@Pd Nanowires for Efficient H<sub>2</sub>O<sub>2</sub> Production</div>
+            <div class="pub-authors">Z. Deng, <strong>A. H. B. Mostaghimi</strong> (equal contribution), M. Gong, N. Chen, S. Siahrostami, X. Wang</div>
+            <div class="pub-venue">
+              <span><em>Journal of the American Chemical Society</em>, 146(4), 2816–2823</span>
+              <a class="mono" href="https://doi.org/10.1021/jacs.3c13259" target="_blank" rel="noopener">10.1021/jacs.3c13259</a>
+            </div>
+          </div>
         </li>
-        <li class="pub-item">
-          <div class="pub-title">Elucidation and modulation of active sites in holey graphene electrocatalysts for H<sub>2</sub>O<sub>2</sub> production</div>
-          <div class="pub-meta">K. H. Koh, <strong>A. H. Bagherzadeh Mostaghimi</strong>, Q. Chang, Y. J. Kim, S. Siahrostami, et al. · <em>EcoMat</em>, 5(1), e12266 (2023) · <a href="https://doi.org/10.1002/eom2.12266" target="_blank" rel="noopener">DOI: 10.1002/eom2.12266</a></div>
+
+        <li class="pub-row" data-topic="electrocatalysis">
+          <div class="pub-year">2023</div>
+          <div>
+            <div class="pub-title">Elucidation and modulation of active sites in holey graphene electrocatalysts for H<sub>2</sub>O<sub>2</sub> production</div>
+            <div class="pub-authors">K. H. Koh, <strong>A. H. Bagherzadeh Mostaghimi</strong>, Q. Chang, Y. J. Kim, S. Siahrostami, et al.</div>
+            <div class="pub-venue">
+              <span><em>EcoMat</em>, 5(1), e12266</span>
+              <a class="mono" href="https://doi.org/10.1002/eom2.12266" target="_blank" rel="noopener">10.1002/eom2.12266</a>
+            </div>
+          </div>
         </li>
-        <li class="pub-item">
-          <div class="pub-title">Cu-doped Ba<sub>0.5</sub>Sr<sub>0.5</sub>FeO<sub>3-&delta;</sub> for electrochemical synthesis of hydrogen peroxide via a 2-electron oxygen reduction reaction</div>
-          <div class="pub-meta">S. V. Venkatesan, <strong>A. H. B. Mostaghimi</strong>, V. Thangadurai, S. Siahrostami · <em>Electrochemical Science Advances</em>, 3(3), e2100140 (2023) · <a href="https://doi.org/10.1002/elsa.202100140" target="_blank" rel="noopener">DOI: 10.1002/elsa.202100140</a></div>
+
+        <li class="pub-row" data-topic="electrocatalysis">
+          <div class="pub-year">2023</div>
+          <div>
+            <div class="pub-title">Cu-doped Ba<sub>0.5</sub>Sr<sub>0.5</sub>FeO<sub>3-&delta;</sub> for electrochemical synthesis of hydrogen peroxide via a 2-electron oxygen reduction reaction</div>
+            <div class="pub-authors">S. V. Venkatesan, <strong>A. H. B. Mostaghimi</strong>, V. Thangadurai, S. Siahrostami</div>
+            <div class="pub-venue">
+              <span><em>Electrochemical Science Advances</em>, 3(3), e2100140</span>
+              <a class="mono" href="https://doi.org/10.1002/elsa.202100140" target="_blank" rel="noopener">10.1002/elsa.202100140</a>
+            </div>
+          </div>
         </li>
-        <li class="pub-item">
-          <div class="pub-title">Two-dimensional metal–organic frameworks with unique oriented layers for oxygen reduction reaction: tailoring the activity through exposed crystal facets</div>
-          <div class="pub-meta">Y. Wang, T. Sun, <strong>A. H. B. Mostaghimi</strong>, T. J. Goncalves, Z. Liang, Y. Zhou, et al. · <em>CCS Chemistry</em>, 4(5), 1633–1642 (2022) · <a href="https://doi.org/10.31635/ccschem.022.202101666" target="_blank" rel="noopener">DOI: 10.31635/ccschem.022.202101666</a></div>
+
+        <li class="pub-row" data-topic="electrocatalysis">
+          <div class="pub-year">2022</div>
+          <div>
+            <div class="pub-title">Two-dimensional metal–organic frameworks with unique oriented layers for oxygen reduction reaction: tailoring the activity through exposed crystal facets</div>
+            <div class="pub-authors">Y. Wang, T. Sun, <strong>A. H. B. Mostaghimi</strong>, T. J. Goncalves, Z. Liang, Y. Zhou, et al.</div>
+            <div class="pub-venue">
+              <span><em>CCS Chemistry</em>, 4(5), 1633–1642</span>
+              <a class="mono" href="https://doi.org/10.31635/ccschem.022.202101666" target="_blank" rel="noopener">10.31635/ccschem.022.202101666</a>
+            </div>
+          </div>
         </li>
-        <li class="pub-item">
-          <div class="pub-title">Enhancing oxygen reduction reaction activity using single atom catalyst supported on tantalum pentoxide</div>
-          <div class="pub-meta">S. Back, <strong>A. H. Bagherzadeh Mostaghimi</strong>, S. Siahrostami · <em>ChemCatChem</em>, 14(11), e202101763 (2022) · <a href="https://doi.org/10.1002/cctc.202101763" target="_blank" rel="noopener">DOI: 10.1002/cctc.202101763</a></div>
+
+        <li class="pub-row" data-topic="electrocatalysis">
+          <div class="pub-year">2022</div>
+          <div>
+            <div class="pub-title">Enhancing oxygen reduction reaction activity using single atom catalyst supported on tantalum pentoxide</div>
+            <div class="pub-authors">S. Back, <strong>A. H. Bagherzadeh Mostaghimi</strong>, S. Siahrostami</div>
+            <div class="pub-venue">
+              <span><em>ChemCatChem</em>, 14(11), e202101763</span>
+              <a class="mono" href="https://doi.org/10.1002/cctc.202101763" target="_blank" rel="noopener">10.1002/cctc.202101763</a>
+            </div>
+          </div>
         </li>
-        <li class="pub-item">
-          <div class="pub-title">Elaborating Nitrogen and Oxygen Dopants Configurations within Graphene Electrocatalysts for Two-Electron Oxygen Reduction</div>
-          <div class="pub-meta"><strong>A. H. Bagherzadeh Mostaghimi</strong>, et al. · <em>ACS Materials Letters</em> (2022) · <a href="https://doi.org/10.1021/acsmaterialslett.1c00660" target="_blank" rel="noopener">DOI: 10.1021/acsmaterialslett.1c00660</a></div>
+
+        <li class="pub-row" data-topic="electrocatalysis">
+          <div class="pub-year">2022</div>
+          <div>
+            <div class="pub-title">Elaborating Nitrogen and Oxygen Dopants Configurations within Graphene Electrocatalysts for Two-Electron Oxygen Reduction</div>
+            <div class="pub-authors"><strong>A. H. Bagherzadeh Mostaghimi</strong>, et al.</div>
+            <div class="pub-venue">
+              <span><em>ACS Materials Letters</em></span>
+              <a class="mono" href="https://doi.org/10.1021/acsmaterialslett.1c00660" target="_blank" rel="noopener">10.1021/acsmaterialslett.1c00660</a>
+            </div>
+          </div>
         </li>
-        <li class="pub-item">
-          <div class="pub-title">A review on electrocatalytic oxidation of methane to oxygenates</div>
-          <div class="pub-meta"><strong>A. H. Bagherzadeh Mostaghimi</strong>, T. A. Al-Attas, M. G. Kibria, S. Siahrostami · <em>Journal of Materials Chemistry A</em>, 8(31), 15575–15590 (2020) · <a href="https://doi.org/10.1039/D0TA03758C" target="_blank" rel="noopener">DOI: 10.1039/D0TA03758C</a></div>
+
+        <li class="pub-row" data-topic="electrocatalysis review">
+          <div class="pub-year">2020</div>
+          <div>
+            <div class="pub-title">A review on electrocatalytic oxidation of methane to oxygenates</div>
+            <div class="pub-authors"><strong>A. H. Bagherzadeh Mostaghimi</strong>, T. A. Al-Attas, M. G. Kibria, S. Siahrostami</div>
+            <div class="pub-venue">
+              <span><em>Journal of Materials Chemistry A</em>, 8(31), 15575–15590</span>
+              <span class="badge-pick">First Author Review</span>
+              <a class="mono" href="https://doi.org/10.1039/D0TA03758C" target="_blank" rel="noopener">10.1039/D0TA03758C</a>
+            </div>
+          </div>
         </li>
-        <li class="pub-item">
-          <div class="pub-title">Promoting H<sub>2</sub>O<sub>2</sub> production via 2-electron oxygen reduction by coordinating partially oxidized Pd with defect carbon</div>
-          <div class="pub-meta">Q. Chang, P. Zhang, <strong>A. H. B. Mostaghimi</strong>, X. Zhao, S. R. Denny, J. H. Lee, H. Gao, et al. · <em>Nature Communications</em>, 11(1), 2178 (2020) · <a href="https://doi.org/10.1038/s41467-020-15843-3" target="_blank" rel="noopener">DOI: 10.1038/s41467-020-15843-3</a></div>
+
+        <li class="pub-row" data-topic="electrocatalysis">
+          <div class="pub-year">2020</div>
+          <div>
+            <div class="pub-title">Promoting H<sub>2</sub>O<sub>2</sub> production via 2-electron oxygen reduction by coordinating partially oxidized Pd with defect carbon</div>
+            <div class="pub-authors">Q. Chang, P. Zhang, <strong>A. H. B. Mostaghimi</strong>, X. Zhao, S. R. Denny, J. H. Lee, H. Gao, et al.</div>
+            <div class="pub-venue">
+              <span><em>Nature Communications</em>, 11(1), 2178</span>
+              <a class="mono" href="https://doi.org/10.1038/s41467-020-15843-3" target="_blank" rel="noopener">10.1038/s41467-020-15843-3</a>
+            </div>
+          </div>
         </li>
-        <li class="pub-item">
-          <div class="pub-title">A review on challenges and successes in atomic-scale design of catalysts for electrochemical synthesis of hydrogen peroxide</div>
-          <div class="pub-meta">S. Siahrostami, S. J. Villegas, <strong>A. H. Bagherzadeh Mostaghimi</strong>, S. Back, et al. · <em>ACS Catalysis</em>, 10(14), 7495–7511 (2020) · <a href="https://doi.org/10.1021/acscatal.0c01641" target="_blank" rel="noopener">DOI: 10.1021/acscatal.0c01641</a></div>
+
+        <li class="pub-row" data-topic="electrocatalysis review">
+          <div class="pub-year">2020</div>
+          <div>
+            <div class="pub-title">A review on challenges and successes in atomic-scale design of catalysts for electrochemical synthesis of hydrogen peroxide</div>
+            <div class="pub-authors">S. Siahrostami, S. J. Villegas, <strong>A. H. Bagherzadeh Mostaghimi</strong>, S. Back, et al.</div>
+            <div class="pub-venue">
+              <span><em>ACS Catalysis</em>, 10(14), 7495–7511</span>
+              <span class="badge-pick">500+ Citations</span>
+              <a class="mono" href="https://doi.org/10.1021/acscatal.0c01641" target="_blank" rel="noopener">10.1021/acscatal.0c01641</a>
+            </div>
+          </div>
         </li>
-        <li class="pub-item">
-          <div class="pub-title">Effect of Adventitious Carbon on Pit Formation of Monolayer MoS<sub>2</sub></div>
-          <div class="pub-meta">S. Park, S. Siahrostami, J. Park, <strong>A. H. B. Mostaghimi</strong>, T. R. Kim, L. Vallez, T. M. Gill, et al. · <em>Advanced Materials</em>, 32(37), 2003020 (2020) · <a href="https://doi.org/10.1002/adma.202003020" target="_blank" rel="noopener">DOI: 10.1002/adma.202003020</a></div>
+
+        <li class="pub-row" data-topic="electrocatalysis">
+          <div class="pub-year">2020</div>
+          <div>
+            <div class="pub-title">Effect of Adventitious Carbon on Pit Formation of Monolayer MoS<sub>2</sub></div>
+            <div class="pub-authors">S. Park, S. Siahrostami, J. Park, <strong>A. H. B. Mostaghimi</strong>, T. R. Kim, L. Vallez, T. M. Gill, et al.</div>
+            <div class="pub-venue">
+              <span><em>Advanced Materials</em>, 32(37), 2003020 (DFT &amp; CI-NEB reaction barriers)</span>
+              <a class="mono" href="https://doi.org/10.1002/adma.202003020" target="_blank" rel="noopener">10.1002/adma.202003020</a>
+            </div>
+          </div>
         </li>
       </ol>
     </section>
 
-    <section id="recognition">
-      <h2>Education &amp; Recognition</h2>
-      <ul class="award-list">
-        <li><span class="date-badge">2026</span><strong>ChemSci Pick of the Week</strong>, <em>Chemical Science</em> (Royal Society of Chemistry) — editorial highlight for co-authored supramolecular host–guest machine-learning study.</li>
-        <li><span class="date-badge">2024</span><strong>Ph.D. in Computational Chemistry</strong>, University of Calgary — Dissertation: <em>A Computational Study of 2 Electron Oxygen Reduction Reaction for Direct H<sub>2</sub>O<sub>2</sub> Electrosynthesis</em>.</li>
-        <li><span class="date-badge">2023</span><strong>Evolve to Innovate (E2I) Grant</strong>, University of Calgary Hunter Hub — successful grant application supporting commercialization of thesis research.</li>
-        <li><span class="date-badge">2022</span><strong>Best Theoretical Presentation Award</strong>, CCCE Calgary.</li>
-        <li><span class="date-badge">2017</span><strong>B.Sc. (Honours) in Applied Chemistry</strong>, Mohaghegh Ardabili University.</li>
-      </ul>
+    <!-- 05 / CV, TEACHING & RECOGNITION -->
+    <section id="cv" class="section">
+      <div class="section-header">
+        <div>
+          <span class="section-num">05 / Background &amp; Recognition</span>
+          <h2>Appointments, Teaching &amp; Awards</h2>
+        </div>
+      </div>
+
+      <div class="cv-grid">
+        <div class="cv-block">
+          <h3>Appointments &amp; Education</h3>
+          <ul class="timeline">
+            <li>
+              <span class="tl-date">Aug 2024 – Present</span>
+              <strong>Postdoctoral Researcher — University of Calgary</strong>
+              Department of Chemistry. Molecular ML, Bayesian/RL reaction optimization, cheminformatics software, and hydrometallurgical REE research support.
+            </li>
+            <li>
+              <span class="tl-date">May 2019 – Aug 2024</span>
+              <strong>Ph.D. in Computational Chemistry — University of Calgary</strong>
+              Dissertation: <em>A Computational Study of 2 Electron Oxygen Reduction Reaction for Direct H<sub>2</sub>O<sub>2</sub> Electrosynthesis</em>.
+            </li>
+            <li>
+              <span class="tl-date">2017</span>
+              <strong>B.Sc. (Honours) in Applied Chemistry — Mohaghegh Ardabili University</strong>
+              Foundational training in physical, analytical, and applied chemistry.
+            </li>
+          </ul>
+        </div>
+
+        <div class="cv-block">
+          <h3>Recognition, Teaching &amp; Training</h3>
+          <ul class="timeline">
+            <li>
+              <span class="tl-date">2026</span>
+              <strong>ChemSci Pick of the Week — Chemical Science (RSC)</strong>
+              Editorial selection highlighting our co-authored supramolecular host–guest machine learning publication.
+            </li>
+            <li>
+              <span class="tl-date">2023</span>
+              <strong>Evolve to Innovate (E2I) Grant — UCalgary Hunter Hub</strong>
+              Authored a successful commercialization grant supporting translation of Ph.D. electrocatalysis research.
+            </li>
+            <li>
+              <span class="tl-date">2022</span>
+              <strong>Best Theoretical Presentation Award — CCCE Calgary</strong>
+              Recognized at the Canadian Chemistry Conference and Exhibition.
+            </li>
+            <li>
+              <span class="tl-date">2019 – 2025</span>
+              <strong>Workshops, Laboratory Instruction &amp; Mentoring</strong>
+              Delivered 40+ hours of hands-on Python/DFT workshops to 50+ multidisciplinary researchers; served as TA for CHEM 201 and CHEM 471 (Physical Chemistry/Kinetics Lab); mentored M.Sc. and summer research students.
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <footer>
-      <div>&copy; 2026 Amir Mostaghimi · Calgary, AB, Canada</div>
+    <footer class="site-footer">
+      <div>&copy; 2026 Amir Mostaghimi, Ph.D. &middot; Calgary, Alberta, Canada</div>
       <div>
         <a href="https://orcid.org/0000-0002-8084-9498" target="_blank" rel="noopener">ORCID</a> &middot;
         <a href="https://scholar.google.com/citations?user=tVTXaxEAAAAJ" target="_blank" rel="noopener">Google Scholar</a> &middot;
+        <a href="https://www.wikidata.org/wiki/Q142293467" target="_blank" rel="noopener">Wikidata</a> &middot;
         <a href="https://www.linkedin.com/in/amir-mostaghimi/" target="_blank" rel="noopener">LinkedIn</a> &middot;
         <a href="https://github.com/amir-b-mostaghimi" target="_blank" rel="noopener">GitHub</a>
       </div>
     </footer>
   </main>
+
+  <script src="simulations.js"></script>
 </body>
 </html>
