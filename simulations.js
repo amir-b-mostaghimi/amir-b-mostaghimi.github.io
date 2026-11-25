@@ -282,10 +282,14 @@
 
       const mx = (t.a.x1 + t.b.x0) / 2;
       const my = (sy(t.a.g) + sy(t.b.g)) / 2;
-      ctx.fillStyle = uphill ? COLORS.copper : COLORS.sage;
+      const lbl = (t.dg >= 0 ? "+" : "") + t.dg.toFixed(2) + " eV";
       ctx.font = "600 10.5px 'JetBrains Mono', monospace";
+      const tw = ctx.measureText(lbl).width;
+      ctx.fillStyle = "rgba(255, 255, 255, 0.92)";
+      ctx.fillRect(mx - tw / 2 - 3, my - 21, tw + 6, 14);
+      ctx.fillStyle = uphill ? COLORS.copper : COLORS.sage;
       ctx.textAlign = "center";
-      ctx.fillText((t.dg >= 0 ? "+" : "") + t.dg.toFixed(2) + " eV", mx, my - 8);
+      ctx.fillText(lbl, mx, my - 10);
     });
 
     // Energy plateaus

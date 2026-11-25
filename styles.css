@@ -506,6 +506,8 @@ a:hover {
   font-family: "JetBrains Mono", monospace;
   font-size: 0.72rem;
   color: var(--ink-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .soft-card p {
   margin: 0 0 14px;
