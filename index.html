@@ -90,6 +90,7 @@
       <div class="nav-links">
         <a href="#research">Research</a>
         <a href="#interactive-lab">Interactive Lab</a>
+        <a href="#minilab">Mini-Lab</a>
         <a href="#software">Software</a>
         <a href="#publications">Publications</a>
         <a href="#cv">CV &amp; Recognition</a>
@@ -318,11 +319,44 @@
       </div>
     </section>
 
-    <!-- 03 / SOFTWARE & DATA PRODUCTS -->
+    <!-- 03 / CHEMML MINI-LAB -->
+    <section id="minilab" class="section">
+      <div class="section-header">
+        <div>
+          <span class="section-num">03 / ChemML Mini-Lab · Writing &amp; Experiments</span>
+          <h2>Small, Runnable Experiments in Scientific ML</h2>
+          <p class="section-sub">Short PyTorch benchmarks and visual breakdowns exploring why physical symmetries, inductive biases, and validation discipline matter in AI for chemistry and materials.</p>
+        </div>
+      </div>
+
+      <article class="story-card">
+        <img src="assets/minilab-01-counting.png" alt="Extrapolation and regime MAE plot comparing MLP, GRU, Transformer, and a 225-parameter Physics-Informed Net on counting sequences" style="aspect-ratio: auto; object-fit: contain; background: #faf9f6; padding: 8px;" />
+        <div class="story-body">
+          <span class="story-meta">Issue #01 · November 2026 · Physics-Informed ML &amp; Extrapolation</span>
+          <h3>Can a Neural Network Learn to Count?</h3>
+          <p>
+            Trained strictly on variable-length counting sequences in <code>[1–50]</code> (e.g., <code>[10, 11, 12, 13, 14] &rarr; 15</code>), an MLP, GRU, and Transformer all achieve <code>0.17–0.22</code> MAE in-distribution—then collapse out of distribution on <code>[5,000–10,000]</code> (<code>618</code> to <code>7,572</code> MAE). Encoding a single physical symmetry—<strong>translation equivariance</strong> (<code>f(x + c) = f(x) + c</code>)—lets a <strong>225-parameter Physics-Informed Net</strong> (40&times; smaller) hold <strong><code>0.0005</code> MAE</strong> up to <code>10,000</code> and reach <code>&lt;0.005</code> OOD MAE with just 25 training examples.
+          </p>
+          <div class="link-bar" style="margin-bottom: 14px;">
+            <a class="btn-primary" href="https://github.com/amir-b-mostaghimi/chem-ml-minilab" target="_blank" rel="noopener">View Code on GitHub</a>
+            <a class="link-subtle" href="https://colab.research.google.com/github/amir-b-mostaghimi/chem-ml-minilab/blob/main/01_can_nn_learn_to_count/01_can_nn_learn_to_count.ipynb" target="_blank" rel="noopener">Open in Google Colab</a>
+            <a class="link-subtle" href="https://medium.com/@amir.b.mostaghimi" target="_blank" rel="noopener">Read on Medium</a>
+          </div>
+          <div class="tag-list">
+            <span class="tag">PyTorch</span>
+            <span class="tag">Translation Equivariance</span>
+            <span class="tag">OOD Extrapolation</span>
+            <span class="tag">Data Efficiency</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 04 / SOFTWARE & DATA PRODUCTS -->
     <section id="software" class="section">
       <div class="section-header">
         <div>
-          <span class="section-num">03 / Software &amp; Data Products</span>
+          <span class="section-num">04 / Software &amp; Data Products</span>
           <h2>Open-Source Tools &amp; Analytical Systems</h2>
           <p class="section-sub">Reproducible Python packages, cheminformatics dashboards, and multi-database literature workflows built for research teams and stakeholders.</p>
         </div>
@@ -375,11 +409,11 @@
       </div>
     </section>
 
-    <!-- 04 / PUBLICATIONS -->
+    <!-- 05 / PUBLICATIONS -->
     <section id="publications" class="section">
       <div class="section-header">
         <div>
-          <span class="section-num">04 / Selected Publications</span>
+          <span class="section-num">05 / Selected Publications</span>
           <h2>Peer-Reviewed Journal Articles</h2>
           <p class="section-sub">Filter by research theme. Full bibliometric record available on <a href="https://scholar.google.com/citations?user=tVTXaxEAAAAJ" target="_blank" rel="noopener">Google Scholar</a> and <a href="https://orcid.org/0000-0002-8084-9498" target="_blank" rel="noopener">ORCID</a>.</p>
         </div>
@@ -533,11 +567,11 @@
       </ol>
     </section>
 
-    <!-- 05 / CV, TEACHING & RECOGNITION -->
+    <!-- 06 / CV, TEACHING & RECOGNITION -->
     <section id="cv" class="section">
       <div class="section-header">
         <div>
-          <span class="section-num">05 / Background &amp; Recognition</span>
+          <span class="section-num">06 / Background &amp; Recognition</span>
           <h2>Appointments, Teaching &amp; Awards</h2>
         </div>
       </div>
